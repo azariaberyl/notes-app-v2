@@ -10,6 +10,8 @@ export const ID = {
   homepage: 'Catatan Aktif',
   search: 'Cari berdasarkan judul ...',
   loading: 'Mengambil note . . .',
+  empty: 'Tidak ada catatan',
+  archiveDesc: 'Catatan Arsip',
 };
 export const EN = {
   title: 'Notes App',
@@ -23,4 +25,6 @@ export const EN = {
   homepage: 'Active Note',
   search: 'Search by title ...',
   loading: 'Fetching notes . . .',
+  empty: 'No notes',
+  archiveDesc: 'Archived Notes',
 };

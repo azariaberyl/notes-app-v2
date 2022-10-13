@@ -178,19 +178,6 @@ header a {
   text-overflow: ellipsis;
 }
 
-
-@media screen and (min-width: 650px) {
-  .notes-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 850px) {
-  .notes-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .notes-list,
 .notes-list-empty {
   margin-top: 32px;
@@ -251,4 +238,46 @@ header a {
 [data-placeholder]:empty::before {
   content: attr(data-placeholder);
   color: var(--font-color)
+}
+
+/* Detail Page */
+.detail-page__title {
+  word-wrap: break-word;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.detail-page__createdAt {
+  color: var(--font-color);
+}
+
+.detail-page__body {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 36px;
+}
+
+
+/* RWD */
+
+@media screen and (min-width: 650px) {
+  .notes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-page__title {
+    font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import useInput from '../hooks/useInput';
 
 const AddPageInput = ({title, onTitleChange, onInputBody}) => {
-
-
   return (
     <div className='add-new-page__input'>
       <input onChange={onTitleChange} className="add-new-page__input__title" placeholder="Catatan rahasia" value={title}></input>

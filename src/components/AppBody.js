@@ -6,6 +6,7 @@ import RegisterPage from '../pages/RegisterPage';
 import NotFoundPage from '../pages/NotFoundPage.js';
 import ArchivesPage from '../pages/ArchivesPage';
 import AddPage from '../pages/AddPage';
+import DetailPage from '../pages/DetailPage';
 
 const AppBody = ({token}) => {
   if (token === '') {
@@ -26,7 +27,7 @@ const AppBody = ({token}) => {
         <Route path='/' element={<HomePage />} />
         <Route path='/archives' element={<ArchivesPage />} />
         <Route path='/notes/new' element={<AddPage />} />
-        <Route path='/notes/:id' element={<AddPage />} />
+        <Route path='/notes/:id' element={<DetailPage />} />
         <Route path='/*' element={<NotFoundPage />} />
       </Routes>
     </main>

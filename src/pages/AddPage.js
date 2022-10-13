@@ -7,8 +7,8 @@ import {addNote} from '../utils/network-data';
 
 const AddPage = () => {
   const navigate = useNavigate();
-  const [title, onTitleChange] = useInput();
-  const [body, setBody] = useState();
+  const [title, onTitleChange] = useInput('');
+  const [body, setBody] = useState('');
 
   const onInputBody = (e) => setBody(e.target.textContent);
   const onSave = async () => {

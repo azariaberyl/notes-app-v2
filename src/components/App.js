@@ -71,19 +71,19 @@ function App() {
 
   const themeValue = React.useMemo(() => {
     return {
-      theme, toggleTheme
+      theme, toggleTheme,
     };
   }, [theme]);
 
   const localeValue = React.useMemo(() => {
     return {
-      locale, toggleLocale
+      locale, toggleLocale,
     };
   }, [locale]);
 
   const userValue = React.useMemo(() => {
     return {
-      onLogin, onLogout, onRegister
+      onLogin, onLogout, onRegister,
     };
   });
 

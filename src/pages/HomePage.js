@@ -5,9 +5,8 @@ import NotesList from '../components/NotesList';
 import NotesListEmpty from '../components/NotesListEmpty';
 import SearchBar from '../components/SearchBar';
 import LocaleContext from '../contexts/LocaleContext';
-import useInput from '../hooks/useInput';
 import {EN, ID} from '../utils/content';
-import {getActiveNotes, getUserLogged} from '../utils/network-data';
+import {getActiveNotes} from '../utils/network-data';
 
 const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,18 +15,15 @@ const HomePage = () => {
   const [notes, setNotes] = useState([]);
   const [loadingBool, setLoading] = useState(true);
   const {homepage, search, loading} = locale === 'id' ? ID : EN;
-  const [user, setUser] = useState();
 
-  const filteredNotes = notes.filter(note => note.title.toLowerCase().includes(searchValue.toLowerCase()));
+  const filteredNotes = notes.filter((note) => note.title.toLowerCase().includes(searchValue.toLowerCase()));
 
   useEffect(() => {
     async function fetchActiveNotes() {
-      const fetchUser = await getUserLogged();
       const resNotes = await getActiveNotes();
       if (resNotes.error === true) {
         return;
       }
-      setUser(fetchUser.data.name);
       setNotes(resNotes.data);
       setLoading(false);
     }
