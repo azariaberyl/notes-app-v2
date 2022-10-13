@@ -8,10 +8,6 @@ import {ID, EN} from '../utils/content';
 import UserContext from '../contexts/UserContext';
 import PropTypes from 'prop-types';
 
-AppHeader.propTypes = {
-  token: PropTypes.string.isRequired,
-  user: PropTypes.string.isRequired,
-};
 
 function AppHeader({token, user}) {
   /**
@@ -46,4 +42,8 @@ function AppHeader({token, user}) {
   );
 }
 
+AppHeader.propTypes = {
+  token: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
+};
 export default AppHeader;

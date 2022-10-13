@@ -8,7 +8,6 @@ const DetailPage = () => {
   const {id} = useParams();
   const [note, setNote] = useState({loading: true});
   const navigate = useNavigate();
-  console.log(note);
 
   useEffect(() => {
     async function fetchNote() {

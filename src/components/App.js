@@ -12,7 +12,7 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const [locale, setLocale] = useState(localStorage.getItem('locale') || 'en');
   const [accessToken, setAccessToken] = useState(getAccessToken() || '');
-  const [user, setUser] = useState();
+  const [user, setUser] = useState('');
 
   useEffect(() => {
     async function checkUser() {
