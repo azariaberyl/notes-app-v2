@@ -9,6 +9,7 @@
 :root {
   --font-color: #333;
   --on-background: #ddd;
+  --on-sc-background: rgb(206, 206, 206);
 }
 
 [data-theme="dark"] {
@@ -131,4 +132,123 @@ header a {
   display: flex;
   font-size: 28px;
   gap: 8px;
+}
+
+.search-bar input {
+  background-color: initial;
+  border: 1px solid var(--font-color);
+  border-radius: 4px;
+  font-size: 16px;
+  color: var(--font-color);
+  margin: 16px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+.notes-list {
+  grid-gap: 16px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.note-item {
+  border: 1px solid var(--font-color);
+  border-radius: 8px;
+  border-top: 5px solid;
+  padding: 16px;
+}
+
+.note-item__title {
+  margin: 4px 0;
+}
+
+.note-item__createdAt {
+  color: var(--font-color);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.note-item__body {
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  margin-top: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@media screen and (min-width: 650px) {
+  .notes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.notes-list,
+.notes-list-empty {
+  margin-top: 32px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty p {
+  color: var(--font-color);
+  text-align: center;
+}
+
+.add-new-page__action,
+.detail-page__action,
+.homepage__action {
+  bottom: 32px;
+  display: flex;
+  gap: 16px;
+  position: fixed;
+  right: 32px;
+}
+
+.action {
+  align-items: center;
+  background-color: var(--font-color);
+  border: 0;
+  border-radius: 50px;
+  color: var(--on-background);
+  cursor: pointer;
+  display: flex;
+  font-size: 32px;
+  height: 50px;
+  justify-content: center;
+  padding: 8px;
+  width: 50px;
+}
+
+/* Add page */
+.add-new-page__input .add-new-page__input__title {
+  background-color: initial;
+  border: 0;
+  color: var(--font-color);
+  font-size: 64px;
+  font-weight: 700;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.add-new-page__input .add-new-page__input__body {
+  background-color: initial;
+  border: 0;
+  color: var(--font-color);
+  font-size: 24px;
+  min-height: 500px;
+  padding: 8px 0;
+  width: 100%;
+}
+
+[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--font-color)
 }

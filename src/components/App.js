@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ThemeProvider} from '../contexts/ThemeContext';
 import {LocaleProvider} from '../contexts/LocaleContext';
 import AppBody from './AppBody';
 import AppHeader from './AppHeader';
-import {getAccessToken, login, putAccessToken, register} from '../utils/network-data';
+import {getAccessToken, getUserLogged, login, putAccessToken, register} from '../utils/network-data';
 import {useNavigate} from 'react-router-dom';
 import {UserProvider} from '../contexts/UserContext';
 
@@ -12,6 +12,20 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const [locale, setLocale] = useState(localStorage.getItem('locale') || 'en');
   const [accessToken, setAccessToken] = useState(getAccessToken() || '');
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    async function checkUser() {
+      if (accessToken == '') return;
+      const getUser = await getUserLogged();
+      if (getUser.error === true) {
+        onLogout();
+        return;
+      }
+      setUser(getUser.data.name || '');
+    }
+    checkUser();
+  }, [accessToken]);
 
   const onLogin = async (email, password) => {
     const user = await login({email, password});
@@ -35,6 +49,7 @@ function App() {
   const onLogout = () => {
     setAccessToken('');
     putAccessToken('');
+    setUser('');
     navigate('/');
   };
 
@@ -77,7 +92,7 @@ function App() {
       <ThemeProvider value={themeValue}>
         <LocaleProvider value={localeValue}>
           <UserProvider value={userValue}>
-            <AppHeader token={accessToken} />
+            <AppHeader user={user} token={accessToken} />
             <AppBody token={accessToken} />
           </UserProvider>
         </LocaleProvider>

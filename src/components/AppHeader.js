@@ -8,7 +8,7 @@ import {ID, EN} from '../utils/content';
 import UserContext from '../contexts/UserContext';
 
 
-function AppHeader({token}) {
+function AppHeader({token, user}) {
   /**
    * Catatan buat reviewer, saya tahu saya gaperlu pakai context
    * karena temanya langsung diambil dari parentnya
@@ -36,7 +36,7 @@ function AppHeader({token}) {
       <Link to='/archives'>{archive}</Link>
       <button onClick={toggleLocale} className='toggle-locale'><MdOutlineGTranslate /></button>
       <button onClick={toggleTheme} className='toggle-theme'> {theme === 'light' ? <FaMoon /> : <FaSun />} </button>
-      <button onClick={onLogout} className='button-logout' type='button'><MdExitToApp /> User</button>
+      <button onClick={onLogout} className='button-logout' type='button'><MdExitToApp /> {user}</button>
     </header>
   );
 }

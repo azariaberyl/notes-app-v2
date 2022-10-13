@@ -6,7 +6,10 @@ export const ID = {
   RegisterDesc: 'Isi form untuk mendaftar akun.',
   registerHaveAccount: 'Sudah punya akun? ',
   registerLoginAccount: 'Login di sini',
-  archive: 'Terarsip'
+  archive: 'Terarsip',
+  homepage: 'Catatan Aktif',
+  search: 'Cari berdasarkan judul ...',
+  loading: 'Mengambil note . . .',
 };
 export const EN = {
   title: 'Notes App',
@@ -16,5 +19,8 @@ export const EN = {
   RegisterDesc: 'Fill the form to register account.',
   registerHaveAccount: 'Already have an account? ',
   registerLoginAccount: 'Login here',
-  archive: 'Archived'
+  archive: 'Archived',
+  homepage: 'Active Note',
+  search: 'Search by title ...',
+  loading: 'Fetching notes . . .',
 };
