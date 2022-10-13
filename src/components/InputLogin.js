@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
-import {useNavigate} from 'react-router-dom';
 import UserContext from '../contexts/UserContext';
 import useInput from '../hooks/useInput';
-import {getUserLogged, login, putAccessToken} from '../utils/network-data';
 
 const InputLogin = () => {
   const [email, onEmailChange] = useInput();

@@ -1,5 +1,10 @@
 import React from 'react';
 import NoteItem from './NoteItem';
+import PropTypes from 'prop-types';
+
+NotesList.propTypes = {
+  notes: PropTypes.object.isRequired,
+};
 
 const NotesList = ({notes}) => {
   return (

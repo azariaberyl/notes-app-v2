@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import useInput from '../hooks/useInput';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const AddPageInput = ({title, onTitleChange, onInputBody}) => {
   return (
@@ -8,6 +8,12 @@ const AddPageInput = ({title, onTitleChange, onInputBody}) => {
       <div onInput={onInputBody} className="add-new-page__input__body" contentEditable="true" data-placeholder='Sebenarnya saya adalah ....'></div>
     </div>
   );
+};
+
+AddPageInput.propTypes = {
+  title: PropTypes.string.isRequired,
+  onTitleChange: PropTypes.func.isRequired,
+  onInputBody: PropTypes.func.isRequired,
 };
 
 export default AddPageInput;

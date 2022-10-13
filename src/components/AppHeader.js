@@ -6,7 +6,12 @@ import ThemeContext from '../contexts/ThemeContext';
 import LocaleContext from '../contexts/LocaleContext';
 import {ID, EN} from '../utils/content';
 import UserContext from '../contexts/UserContext';
+import PropTypes from 'prop-types';
 
+AppHeader.propTypes = {
+  token: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
+};
 
 function AppHeader({token, user}) {
   /**

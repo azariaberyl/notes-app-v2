@@ -7,6 +7,7 @@ import NotFoundPage from '../pages/NotFoundPage.js';
 import ArchivesPage from '../pages/ArchivesPage';
 import AddPage from '../pages/AddPage';
 import DetailPage from '../pages/DetailPage';
+import PropTypes from 'prop-types';
 
 const AppBody = ({token}) => {
   if (token === '') {
@@ -32,6 +33,11 @@ const AppBody = ({token}) => {
       </Routes>
     </main>
   );
+};
+
+
+AppBody.propTypes = {
+  token: PropTypes.string.isRequired,
 };
 
 export default AppBody;
